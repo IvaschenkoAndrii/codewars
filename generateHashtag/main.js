@@ -1,9 +1,7 @@
 function generateHashtag(str) {
     let splited = str.split(' ');
     let filtered = splited.filter(value => value.length !== 0);
-    console.log(filtered);
     let cap = filtered.map(value=> value[0].toUpperCase() + value.slice(1));
-    console.log(cap);
     let res1 = cap.join('');
     if (res1.length !== 0 && res1.length < 140 && res1[0]!=='#') {
         return '#'+res1;
@@ -16,7 +14,7 @@ function generateHashtag(str) {
 }
 
 
-s = 'as    dfsdf';
+s = '#as    dfsdf';
 console.log(generateHashtag(s));
 
 // Альтернативные решения
