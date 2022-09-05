@@ -1,12 +1,9 @@
 function generateHashtag(str) {
-    let splited = str.split(' ');
-    let filtered = splited.filter(value => value.length !== 0);
-    let cap = filtered.map(value=> value[0].toUpperCase() + value.slice(1));
-    let res1 = cap.join('');
-    if (res1.length !== 0 && res1.length < 140 && res1[0]!=='#') {
-        return '#'+res1;
-    } else if(res1.length !== 0 && res1.length < 140 && res1[0]==='#'){
-        return '#'+res1[1].toUpperCase()+res1.slice(2);
+    let splited = str.split(' ').filter(value => value.length !== 0).map(value=> value[0].toUpperCase() + value.slice(1)).join('');
+    if (splited.length !== 0 && splited.length < 140 && splited[0]!=='#') {
+        return '#'+splited;
+    } else if(splited.length !== 0 && splited.length < 140 && splited[0]==='#'){
+        return '#'+splited[1].toUpperCase()+splited.slice(2);
     }
     else {
         return false;
@@ -14,7 +11,7 @@ function generateHashtag(str) {
 }
 
 
-s = '#as    dfsdf';
+s = '#dfgfsdg    sdfsg';
 console.log(generateHashtag(s));
 
 // Альтернативные решения
