@@ -8,6 +8,7 @@ function count (string) {
 console.log(count(''));
 
 
+
 //Альтернативные решения
 
 // function count (string) {
